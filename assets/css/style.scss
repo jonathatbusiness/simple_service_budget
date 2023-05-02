@@ -1,0 +1,252 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+
+}
+
+#content {
+    width: 100%;
+    margin: 0px auto;
+    padding: 5px 5px;
+}
+
+.tableHeader {
+    margin: 0px auto;
+    font-size: 12px;
+    font-weight: bold;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    table-layout: fixed;
+}
+
+.columnSizeTotal_1,
+.columnSizeTotal_1 {
+    width: 10%
+}
+
+.salvarPDF {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+
+
+.headerDescription p {
+    font-size: 12px;
+}
+
+#companyData {
+    font-size: 11px;
+    font-weight: bold;
+
+}
+
+h2 {
+    font-size: 14px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#materiais,
+#servicos,
+#fechamento {
+    text-transform: uppercase;
+    padding: 5px 5px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 1px;
+}
+
+#materiais table {
+    font-size: 12px;
+
+}
+
+#servicos table {
+    font-size: 12px;
+
+}
+
+#fechamento table {
+    font-size: 12px;
+
+}
+
+
+
+table {
+    width: 100%;
+
+}
+
+.materiais {
+    border-style: solid;
+    border-color: black;
+}
+
+#materiaisTable>tbody>tr>td>input {
+    width: 95%;
+}
+
+#servicosTable>tbody>tr>td>input {
+    width: 95%;
+}
+
+#fechamentoTable>tbody>tr>td>input {
+    width: 95%;
+}
+
+tfoot>tr>td>input {
+    width: 99%;
+}
+
+img {
+    width: 30%;
+}
+
+.headerTitle {
+    font-size: 20px;
+    text-align: center;
+    width: 60%;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.tdImg img {
+    width: 100%;
+    align-items: center;
+
+}
+
+.tdImg {
+    width: 15%;
+    padding: 0;
+    margin: 0 auto;
+
+}
+
+.column_4Title {
+    width: 7%;
+}
+
+.column_5Title {
+    width: 18%
+}
+
+.column_5Title input {
+    width: 95%;
+}
+
+.infoSeller {
+    font-size: 12px;
+
+}
+
+.sizeColumn_1 {
+    width: 8%;
+}
+
+.sizeColumn_2 {
+    width: 50%;
+}
+
+.sizeColumn_3 {
+    width: 10%;
+}
+
+
+.sizeColumn_4 {
+    width: 10%;
+}
+
+.sizeColumn_5 {
+    width: 10%;
+}
+
+
+.sizeColumn_6 {
+    width: 10%;
+}
+
+.inputSize {
+    width: 80%;
+    text-align: left;
+}
+
+.inputSize>tr>td>input {
+
+    box-sizing: border-box;
+    margin: 0 auto;
+
+}
+
+.infoSellerSize_1 {
+    width: 20%;
+}
+
+.infoSellerSize_2 {
+    width: 30%;
+}
+
+.infoSellerSize_2 input {
+    width: 95%;
+}
+
+.infoSellerSize_3 {
+    width: 20%;
+}
+
+.infoSellerSize_4 {
+    width: 30%;
+}
+
+.infoSellerSize_4 input {
+    width: 95%;
+}
+
+.infoCompanySize_1 {
+    width: 10%;
+}
+
+.infoCompanySize_2 {
+    width: 30%;
+}
+
+.infoCompanySize_2 input {
+    width: 95%;
+}
+
+.infoCompanySize_3 {
+    width: 90%;
+}
+
+.infoCompanySize_3 input {
+    width: 98%;
+}
+
+.totalAllMateriais,
+.totalAllServicos,
+.totalAllFechamento {
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.totalTxt {
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+}

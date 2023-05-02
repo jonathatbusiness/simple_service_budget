@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Proposta de Fornecimento de Rede/Internet</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+	<!--<script src="assets/js/jspdf.umd.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js" defer></script>
+
+	<script src="assets/js/script.js" defer></script>
+
+</head>
+
+<body id="print">
+	<div id="content">
+
+		<!--HEADER DESCRIPTION-->
+		<header>
+			<table class="tableHeader">
+				<tr>
+					<td class="tdImg" rowspan="3">
+						<img src="assets/img/EiConecttaLogo.png">
+					</td>
+					<td rowspan="3" class="headerTitle">PROPOSTA DE FORNECIMENTO DE REDE/INTERNET</td>
+					<td>Data:</td>
+					<td class="column_5Title" id="data"></td>
+				</tr>
+				<tr>
+					<td class="column_4Title">Hora:</td>
+					<td class="column_5Title" id="hora"></td>
+				</tr>
+				<tr>
+					<td class="column_4Title">Versão:</td>
+					<td class="column_5Title"><input type="text" placeholder="Insira um número"></td>
+				</tr>
+			</table>
+		</header>
+		<br>
+		<!--COMPANY INFO SECTION-->
+		<table id="companyData" class="tableCompany">
+			<tbody style="width: 100%;">
+				<tr>
+					<td class="infoCompanySize_1">Empresa:</td>
+					<td class="infoCompanySize_3" colspan="3"><input type="text"></td>
+
+				</tr>
+				<tr>
+					<td class="infoCompanySize_1">E-mail:</td>
+					<td class="infoCompanySize_2"><input type="text"></td>
+					<td class="infoCompanySize_1">Telefone:</td>
+					<td class="infoCompanySize_2"><input type="text"></td>
+
+				</tr>
+				<tr>
+					<td class="infoCompanySize_1">A/C:</td>
+					<td class="infoCompanySize_2"><input type="text"></td>
+					<td class="infoCompanySize_1">Setor:</td>
+					<td class="infoCompanySize_2"><input type="text"></td>
+				</tr>
+			</tbody>
+
+		</table>
+		<br>
+		<!--ITEMS AND SERVICES SECTION-->
+
+
+
+		<!--MATERIAIS-->
+		<div id="materiais" class="materiais">
+			<h2>Materiais</h2>
+
+			<table id="materiaisTable">
+				<thead>
+					<tr>
+						<th class="sizeColumn_1">#</th>
+						<th class="sizeColumn_2">Descrição do Produto</th>
+						<th class="sizeColumn_3">UN</th>
+						<th class="sizeColumn_4">QTDE</th>
+						<th class="sizeColumn_5">VL UNIT R$.</th>
+						<th class="sizeColumn_6">VL TOTAL R$</th>
+					</tr>
+				</thead>
+				<tbody class="inputSize">
+					<!-- Tabela de Materiais -->
+					<tr class="dontRemove">
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+						<td><input type="number" class="quantityMateriais_0"></td>
+						<td><input type="number" class="currency unitPriceMateriais_0"></td>
+						<td><span class="currency totalValueMateriais_0">0</span></td>
+					</tr>
+				</tbody>
+
+
+
+			</table>
+
+			<table class="totalTable_1">
+				<tfoot>
+					<tr class="dontRemove">
+						<td class="totalTxt columnSizeTotal_1">Total R$:</td>
+						<td><span class="columnSizeTotal_1 currency totalAllMateriais">0</span></td>
+					</tr>
+				</tfoot>
+			</table>
+			<div data-html2canvas-ignore="true">
+				<button onclick="newLineMateriais()">+</button>
+				<button onclick="removeLineMateriais()">-</button>
+				<button onclick="resultadoMateriais()">Atualizar Valores</button>
+
+			</div>
+
+		</div>
+		<br>
+
+		<!--SERVIÇOS-->
+		<div id="servicos">
+			<h2>Serviços</h2>
+			<table id="servicosTable">
+				<thead>
+					<tr>
+						<th class="sizeColumn_1">#</th>
+						<th class="sizeColumn_2">Descrição do Serviço</th>
+						<th class="sizeColumn_3">UN</th>
+						<th class="sizeColumn_4">QTDE</th>
+						<th class="sizeColumn_5">VL UNIT.</th>
+						<th class="sizeColumn_6">VL TOTAL</th>
+					</tr>
+				</thead>
+				<tbody class="inputSize">
+					<!-- Tabela de Serviços -->
+					<tr class="dontRemove">
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+						<td><input type="number" class="quantityServicos_0"></td>
+						<td><input type="number" class="currency unitPriceServicos_0"></td>
+						<td><span class="currency totalValueServicos_0">0</span></td>
+
+
+
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tfoot>
+					<tr class="dontRemove">
+						<td class="totalTxt columnSizeTotal_1">Total R$:</td>
+						<td><span class="currency totalAllServicos">0</span></td>
+					</tr>
+				</tfoot>
+			</table>
+			<div data-html2canvas-ignore="true">
+				<button onclick="newLineServicos()">+</button>
+				<button onclick="removeLineServicos()">-</button>
+				<button onclick="resultadoServicos()">Atualizar Valores</button>
+			</div>
+
+		</div>
+		<br>
+		<!--FECHAMENTO-->
+		<div id="fechamento">
+			<h2>Fechamento</h2>
+			<table id="fechamentoTable">
+				<thead>
+					<tr>
+						<th class="sizeColumn_1">#</th>
+						<th class="sizeColumn_2">Descrição</th>
+						<th class="sizeColumn_3">UN</th>
+						<th class="sizeColumn_4">QTDE</th>
+						<th class="sizeColumn_5">VL UNIT.</th>
+						<th class="sizeColumn_6">VL TOTAL</th>
+					</tr>
+				</thead>
+				<tbody class="inputSize">
+					<!-- Tabela de Fechamento -->
+					<tr class="dontRemove">
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+						<td><input type="number" class="quantityFechamento_0"></td>
+						<td><input type="number" class="currency unitPriceFechamento_0"></td>
+						<td><span class="currency totalValueFechamento_0">0</span></td>
+
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tfoot>
+					<tr class="dontRemove">
+						<td class="totalTxt columnSizeTotal_1">Total R$:</td>
+						<td><span class="currency totalAllFechamento">0</span></td>
+					</tr>
+				</tfoot>
+			</table>
+			<div data-html2canvas-ignore="true">
+				<button onclick="newLineFechamento()">+</button>
+				<button onclick="removeLineFechamento()">-</button>
+				<button onclick="resultadoFechamento()">Atualizar Valores</button>
+			</div>
+
+		</div>
+		<br>
+
+		<!--INFO VENDEDOR-->
+		<div id="informacoes">
+			<h2>Informações do Vendedor</h2>
+			<table class="infoSeller">
+				<tbody>
+					<tr>
+						<td class="infoSellerSize_1">Vendedor:</td>
+						<td class="infoSellerSize_2"><input type="text"><!-- Nome do Vendedor --></td>
+						<td class="infoSellerSize_3">Telefone:</td>
+						<td class="infoSellerSize_4"><input type="text"><!-- Telefone do Vendedor --></td>
+					</tr>
+					<tr>
+						<td class="infoSellerSize_1">E-mail:</td>
+						<td class="infoSellerSize_2"><input type="text"><!-- Nome do Vendedor --></td>
+						<td class="infoSellerSize_3">Celular:</td>
+						<td class="infoSellerSize_4"><input type="text"><!-- Telefone do Vendedor --></td>
+					</tr>
+					<tr>
+						<td class="infoSellerSize_1">Prazo de Entrega:</td>
+						<td class="infoSellerSize_2"><input type="text"><!-- Nome do Vendedor --></td>
+						<td class="infoSellerSize_3">Condições de Pagto Materiais:</td>
+						<td class="infoSellerSize_4"><input type="text"><!-- Telefone do Vendedor --></td>
+					</tr>
+					<tr>
+						<td class="infoSellerSize_1">Validade:</td>
+						<td class="infoSellerSize_2"><input type="text"><!-- Nome do Vendedor --></td>
+						<td class="infoSellerSize_3">Condições de Pagto Serviços:</td>
+						<td class="infoSellerSize_4"><input type="text"><!-- Telefone do Vendedor --></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div data-html2canvas-ignore="true" id="salvar" class="salvarPDF">
+			<button id="exclude_10" onclick="generatePDF()">Salvar</button>
+		</div>
+
+
+
+
+</body>
+
+</html>
