@@ -1,5 +1,6 @@
 //SAVE BUTTON========================
-var button = document.getElementById('.btn');
+var button = document.querySelectorAll('.btn');
+
 
 
 function generatePDF() {
@@ -8,9 +9,10 @@ function generatePDF() {
     margin: 0,
     filename: 'proposta.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 1 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a3', orientation: 'portrait', height: 'auto' },
     exclude: [button]
+
   };
   html2pdf().set(opt).from(element).save();
 }

@@ -2,6 +2,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -10,7 +13,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 body {
 
-    width: 750px;
+    width: 910px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -199,15 +202,16 @@ img {
 }
 
 .infoSellerSize_1 {
-    width: 20%;
+    width: 10%;
 }
 
 .infoSellerSize_2 {
-    width: 20%;
+    width: 30%;
 }
 
 .infoSellerSize_2 input {
     width: 95%;
+    font-size: 12px;
 }
 
 .infoSellerSize_3 {
@@ -215,11 +219,12 @@ img {
 }
 
 .infoSellerSize_4 {
-    width: 20%;
+    width: 25%;
 }
 
 .infoSellerSize_4 input {
     width: 95%;
+    font-size: 12px;
 }
 
 .infoCompanySize_1 {
@@ -280,4 +285,49 @@ img {
 .companyInfoSession span {
     font-size: 11px;
     text-align: center;
+    text-transform: uppercase;
+}
+
+.social {
+    margin: 0 auto;
+    display: flex;
+
+}
+
+.social span {
+    margin: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20 px;
+    justify-content: center;
+}
+
+//icon
+
+.social>span>i {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+//icon end
+
+footer {
+    line-height: 30px;
+    background-color: #49B8AA;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+footer span {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 05px auto;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
 }
