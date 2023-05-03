@@ -1,3 +1,4 @@
+//SAVE BUTTON========================
 var button = document.getElementById('.btn');
 
 
@@ -14,9 +15,31 @@ function generatePDF() {
   html2pdf().set(opt).from(element).save();
 }
 
+//AVOID NEGATIVE INPUT==================
+const inputs = document.querySelectorAll('.noNegative');
+
+// Adiciona um ouvinte de eventos de teclado a cada campo de entrada
+inputs.forEach(input => {
+  input.addEventListener('keydown', function (event) {
+    // Verifica se a tecla pressionada é um sinal de menos (-)
+    if (event.key === '-') {
+      // Impede a inserção do sinal de menos
+      event.preventDefault();
+    }
+  });
+
+  // Adiciona um ouvinte de eventos de mudança ao campo de entrada
+  input.addEventListener('change', function (event) {
+    // Verifica se o valor do campo de entrada é negativo
+    if (input.value < 0) {
+      // Define o valor do campo de entrada como 0
+      input.value = 0;
+    }
+  });
+});
 
 
-
+//AUTO DATE & HOUR=====================
 document.addEventListener("DOMContentLoaded", function () {
   // Obter a data atual
   const dataAtual = new Date();
@@ -38,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("hora").textContent = horaAtual;
 });
 
-//NEW/REMOVE LINES 1
+//TABLES NEW LINES & REMOVE LINES==================
+//LINES 1==========================================
 let counterQuantityMateriais = 1;
 let counterUnitPriceMateriais = 1;
 let counterTotalMateriais = 1;
@@ -63,12 +87,14 @@ function newLineMateriais() {
   col5.innerHTML = `<input type="number" class="currency unitPriceMateriais_${counterUnitPriceMateriais}">`;
 
   const col6 = newRow.insertCell(5);
-  col6.innerHTML = `<span class="currency totalValueMateriais_${counterTotalMateriais}">`;
+  col6.classList.add('lastCell'); // adicionando a classe "lastCell" ao elemento <td>
+  col6.innerHTML = `<span class="currency totalValueMateriais_${counterTotalMateriais}">0`;
 
   counterQuantityMateriais++;
   counterUnitPriceMateriais++;
   counterTotalMateriais++;
 }
+
 
 function removeLineMateriais() {
   let table = document.getElementById('materiaisTable');
@@ -81,7 +107,7 @@ function removeLineMateriais() {
 }
 
 
-//NEW/REMOVE LINES 2
+//LINES 2=======================================
 let counterQuantityServicos = 1;
 let counterUnitPriceServicos = 1;
 let counterTotalServicos = 1;
@@ -106,7 +132,8 @@ function newLineServicos() {
   col5.innerHTML = `<input type="number" class="currency unitPriceServicos_${counterUnitPriceServicos}">`;
 
   const col6 = newRow.insertCell(5);
-  col6.innerHTML = `<span class="currency totalValueServicos_${counterTotalServicos}">`;
+  col6.classList.add('lastCell'); // adicionando a classe "lastCell" ao elemento <td>
+  col6.innerHTML = `<span class="currency totalValueServicos_${counterTotalServicos}">0`;
 
   counterQuantityServicos++;
   counterUnitPriceServicos++;
@@ -125,7 +152,7 @@ function removeLineServicos() {
   table.deleteRow(lastRow);
 }
 
-//NEW/REMOVE LINES 2
+//LINES 3===========================================
 let counterQuantityFechamento = 1;
 let counterUnitPriceFechamento = 1;
 let counterTotalFechamento = 1;
@@ -150,7 +177,8 @@ function newLineFechamento() {
   col5.innerHTML = `<input type="number" class="currency unitPriceFechamento_${counterUnitPriceFechamento}">`;
 
   const col6 = newRow.insertCell(5);
-  col6.innerHTML = `<span class="currency totalValueFechamento_${counterTotalFechamento}">`;
+  col6.classList.add('lastCell'); // adicionando a classe "lastCell" ao elemento <td>
+  col6.innerHTML = `<span class="currency totalValueFechamento_${counterTotalFechamento}">0`;
 
   counterQuantityFechamento++;
   counterUnitPriceFechamento++;
@@ -168,9 +196,8 @@ function removeLineFechamento() {
 }
 
 
-//FORMULA DE SOMAS//
+//MATHEMATICAL EXPRESSIONS//=========================
 //MATERIAIS
-
 // Adiciona o evento de clique ao botão "Gerar"
 function resultadoMateriais() {
 
@@ -203,12 +230,9 @@ function resultadoMateriais() {
   var totalAllM = document.querySelector('span.totalAllMateriais');
   totalAllM.textContent = totalAllMateriais;
 };
+//MATERIAIS END
 
-
-//MATERIAIS FIM
-
-//SERVICOS
-
+//SERVICOS=============================
 function resultadoServicos() {
 
   // Seleciona todas as linhas da tabela
@@ -243,8 +267,7 @@ function resultadoServicos() {
 
 //SERVICOS FIM
 
-//FECHAMENTO
-
+//FECHAMENTO=======================================
 function resultadoFechamento() {
 
   // Seleciona todas as linhas da tabela
@@ -279,4 +302,4 @@ function resultadoFechamento() {
 
 //FECHAMENTO FIM
 
-//FORMULA DE SOMAS FIM//
+//END MATHEMATICAL EXPRESSIONS//

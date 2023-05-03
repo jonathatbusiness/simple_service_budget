@@ -2,6 +2,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   width: 750px;
   margin: 0 auto;
@@ -26,9 +32,8 @@ body {
   table-layout: fixed;
 }
 
-.columnSizeTotal_1,
 .columnSizeTotal_1 {
-  width: 10%;
+  width: 90%;
 }
 
 .salvarPDF {
@@ -179,7 +184,7 @@ img {
 }
 
 .infoSellerSize_2 {
-  width: 30%;
+  width: 20%;
 }
 
 .infoSellerSize_2 input {
@@ -187,11 +192,11 @@ img {
 }
 
 .infoSellerSize_3 {
-  width: 20%;
+  width: 25%;
 }
 
 .infoSellerSize_4 {
-  width: 30%;
+  width: 20%;
 }
 
 .infoSellerSize_4 input {
@@ -230,4 +235,30 @@ img {
   text-align: right;
   font-weight: bold;
   font-size: 14px;
+}
+
+.lastCell {
+  padding: 0 5px;
+  text-align: right;
+  font-weight: bold;
+  background-color: #e9e9e9;
+}
+
+.totalTable_1 {
+  margin: 10px 0;
+  text-align: right;
+  background-color: #e9e9e9;
+}
+
+.companyInfoSession {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.companyInfoSession span {
+  font-size: 11px;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

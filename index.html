@@ -90,9 +90,9 @@
 						<td><input type="text"></td>
 						<td><input type="text"></td>
 						<td><input type="text"></td>
-						<td><input type="number" class="quantityMateriais_0"></td>
-						<td><input type="number" class="currency unitPriceMateriais_0"></td>
-						<td><span class="currency totalValueMateriais_0">0</span></td>
+						<td><input type="number" min="0" class="quantityMateriais_0 noNegative"></td>
+						<td><input type="number" min="0" class="currency unitPriceMateriais_0 noNegative"></td>
+						<td class="lastCell"><span class="currency totalValueMateriais_0">0</span></td>
 					</tr>
 				</tbody>
 
@@ -138,16 +138,16 @@
 						<td><input type="text"></td>
 						<td><input type="text"></td>
 						<td><input type="text"></td>
-						<td><input type="number" class="quantityServicos_0"></td>
-						<td><input type="number" class="currency unitPriceServicos_0"></td>
-						<td><span class="currency totalValueServicos_0">0</span></td>
+						<td><input type="number" min="0" class="quantityServicos_0 noNegative"></td>
+						<td><input type="number" min="0" class="currency unitPriceServicos_0 noNegative"></td>
+						<td class="lastCell"><span class="currency totalValueServicos_0">0</span></td>
 
 
 
 					</tr>
 				</tbody>
 			</table>
-			<table>
+			<table class="totalTable_1">
 				<tfoot>
 					<tr class="dontRemove">
 						<td class="totalTxt columnSizeTotal_1">Total R$:</td>
@@ -183,14 +183,14 @@
 						<td><input type="text"></td>
 						<td><input type="text"></td>
 						<td><input type="text"></td>
-						<td><input type="number" class="quantityFechamento_0"></td>
-						<td><input type="number" class="currency unitPriceFechamento_0"></td>
-						<td><span class="currency totalValueFechamento_0">0</span></td>
+						<td><input type="number" min="0" class="quantityFechamento_0 noNegative"></td>
+						<td><input type="number" min="0" class="currency unitPriceFechamento_0 noNegative"></td>
+						<td class="lastCell"><span class="currency totalValueFechamento_0">0</span></td>
 
 					</tr>
 				</tbody>
 			</table>
-			<table>
+			<table class="totalTable_1">
 				<tfoot>
 					<tr class="dontRemove">
 						<td class="totalTxt columnSizeTotal_1">Total R$:</td>
@@ -239,10 +239,23 @@
 				</tbody>
 			</table>
 		</div>
+		<br>
+		<div class="companyInfoSession">
+			<span>Razão Social: EI CONECCTA - Guilherme de Assis Ramos</span>
+			<span>CNPJ: 50.506.916/0001-96</span>
+			<span>RUA DOUTOR GERALDO CARDOSO, 132 - RESIDENCIAL SAO LUCAS - ALFENAS/MG</span>
+			<span>Fone: (xx) xxxx-xxxx</span>
 
+		</div>
+
+
+
+
+		<br>
 		<div data-html2canvas-ignore="true" id="salvar" class="salvarPDF">
 			<button id="exclude_10" onclick="generatePDF()">Salvar</button>
 		</div>
+		<br>
 
 
 
