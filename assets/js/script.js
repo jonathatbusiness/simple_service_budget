@@ -83,14 +83,14 @@ function newLineMateriais() {
   col3.innerHTML = '<input type="text">';
 
   const col4 = newRow.insertCell(3);
-  col4.innerHTML = `<input type="number" class="quantityMateriais_${counterQuantityMateriais}">`;
+  col4.innerHTML = `<input type="number" name="quantityMateriais">`;
 
   const col5 = newRow.insertCell(4);
-  col5.innerHTML = `<input type="number" class="currency unitPriceMateriais_${counterUnitPriceMateriais}">`;
+  col5.innerHTML = `<input type="number" name="unitPriceMateriais">`;
 
   const col6 = newRow.insertCell(5);
   col6.classList.add('lastCell'); // adicionando a classe "lastCell" ao elemento <td>
-  col6.innerHTML = `<span class="currency totalValueMateriais_${counterTotalMateriais}">0`;
+  col6.innerHTML = `<span class="currency totalValueMateriais">0`;
 
   counterQuantityMateriais++;
   counterUnitPriceMateriais++;
@@ -213,8 +213,8 @@ function resultadoMateriais() {
     var linhaM = linhas_M[i];
 
     // Seleciona os campos de quantidade e valor unitário da linha atual, se eles existirem
-    var quantityM = linhaM.querySelector('input.quantityMateriais_' + i);
-    var unitPriceM = linhaM.querySelector('input.unitPriceMateriais_' + i);
+    var quantityM = linhaM.querySelector('input[name="quantityMateriais"]'); // atualiza o seletor
+    var unitPriceM = linhaM.querySelector('input[name="unitPriceMateriais"]'); // atualiza o seletor
     if (!quantityM || !unitPriceM) {
       continue; // pula para a próxima iteração se um dos campos não existir
     }
@@ -223,7 +223,7 @@ function resultadoMateriais() {
     var totalM = quantityM.value * unitPriceM.value;
 
     // Seleciona o campo de valor total da linha atual e atualiza o valor
-    var totalValueM = linhaM.querySelector('span.totalValueMateriais_' + i);
+    var totalValueM = linhaM.querySelector('span.totalValueMateriais'); // remove o índice da classe
     totalValueM.textContent = totalM;
 
     // Atualiza o valor total da tabela

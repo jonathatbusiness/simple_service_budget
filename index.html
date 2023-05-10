@@ -91,8 +91,8 @@
 						<td><input type="text"></td>
 						<td><input type="text"></td>
 						<td><input type="text"></td>
-						<td><input type="number" min="0" class="quantityMateriais_0 noNegative"></td>
-						<td><input type="number" min="0" class="currency unitPriceMateriais_0 noNegative"></td>
+						<td><input type="number" min="0" name="quantityMateriais" class="noNegative"></td>
+						<td><input type="number" min="0" name="unitPriceMateriais" class="currency noNegative"></td>
 						<td class="lastCell"><span class="currency totalValueMateriais_0">0</span></td>
 					</tr>
 				</tbody>
@@ -111,7 +111,7 @@
 			</table>
 			<div data-html2canvas-ignore="true">
 				<button onclick="newLineMateriais()">+</button>
-				<button onclick="removeLineMateriais()">-</button>
+				<button class="btn btn-danger" onclick="removeRow(this)">-</button>
 				<button onclick="resultadoMateriais()">Atualizar Valores</button>
 
 			</div>
