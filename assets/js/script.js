@@ -128,14 +128,14 @@ function newLineServicos() {
   col3.innerHTML = '<input type="text">';
 
   const col4 = newRow.insertCell(3);
-  col4.innerHTML = `<input type="number" class="quantityServicos_${counterQuantityServicos}">`;
+  col4.innerHTML = `<input type="number" name="quantityServicos">`;
 
   const col5 = newRow.insertCell(4);
-  col5.innerHTML = `<input type="number" class="currency unitPriceServicos_${counterUnitPriceServicos}">`;
+  col5.innerHTML = `<input type="number" name="unitPriceServicos">`;
 
   const col6 = newRow.insertCell(5);
   col6.classList.add('lastCell'); // adicionando a classe "lastCell" ao elemento <td>
-  col6.innerHTML = `<span class="currency totalValueServicos_${counterTotalServicos}">0`;
+  col6.innerHTML = `<span class="currency totalValueServicos">0`;
 
   counterQuantityServicos++;
   counterUnitPriceServicos++;
@@ -173,14 +173,14 @@ function newLineFechamento() {
   col3.innerHTML = '<input type="text">';
 
   const col4 = newRow.insertCell(3);
-  col4.innerHTML = `<input type="number" class="quantityFechamento_${counterQuantityFechamento}">`;
+  col4.innerHTML = `<input type="number" name="quantityFechamento">`;
 
   const col5 = newRow.insertCell(4);
-  col5.innerHTML = `<input type="number" class="currency unitPriceFechamento_${counterUnitPriceFechamento}">`;
+  col5.innerHTML = `<input type="number" name="unitPriceFechamento">`;
 
   const col6 = newRow.insertCell(5);
   col6.classList.add('lastCell'); // adicionando a classe "lastCell" ao elemento <td>
-  col6.innerHTML = `<span class="currency totalValueFechamento_${counterTotalFechamento}">0`;
+  col6.innerHTML = `<span class="currency totalValueFechamento">0`;
 
   counterQuantityFechamento++;
   counterUnitPriceFechamento++;
@@ -206,10 +206,10 @@ function resultadoMateriais() {
   var linhas_M = document.querySelectorAll('#materiaisTable tbody tr');
 
   // Inicializa o valor total da tabela como zero
-  var totalAllMateriais = 0.00;
+  var totalAllMateriais = 0;
 
   // Percorre todas as linhas da tabela
-  for (var i = 0.00; i < linhas_M.length; i++) {
+  for (var i = 0; i < linhas_M.length; i++) {
     var linhaM = linhas_M[i];
 
     // Seleciona os campos de quantidade e valor unitário da linha atual, se eles existirem
@@ -243,21 +243,23 @@ function resultadoServicos() {
   var linhas_S = document.querySelectorAll('#servicosTable tbody tr');
 
   // Inicializa o valor total da tabela como zero
-  var totalAllServicos = 0.00;
+  var totalAllServicos = 0;
 
   // Percorre todas as linhas da tabela
-  for (var i = 0.00; i < linhas_S.length; i++) {
+  for (var i = 0; i < linhas_S.length; i++) {
     var linhaS = linhas_S[i];
 
     // Seleciona os campos de quantidade e valor unitário da linha atual
-    var quantityS = linhaS.querySelector('input.quantityServicos_' + i);
-    var unitPriceS = linhaS.querySelector('input.unitPriceServicos_' + i);
-
+    var quantityS = linhaS.querySelector('input[name="quantityServicos"]');
+    var unitPriceS = linhaS.querySelector('input[name="unitPriceServicos"]');
+    if (!quantityS || !unitPriceS) {
+      continue; // pula para a próxima iteração se um dos campos não existir
+    }
     // Calcula o valor total da linha
     var totalS = quantityS.value * unitPriceS.value;
 
     // Seleciona o campo de valor total da linha atual e atualiza o valor
-    var totalValueS = linhaS.querySelector('span.totalValueServicos_' + i);
+    var totalValueS = linhaS.querySelector('span.totalValueServicos');
     totalValueS.textContent = totalS;
 
     // Atualiza o valor total da tabela
@@ -278,21 +280,23 @@ function resultadoFechamento() {
   var linhas_F = document.querySelectorAll('#fechamentoTable tbody tr');
 
   // Inicializa o valor total da tabela como zero
-  var totalAllFechamento = 0.00;
+  var totalAllFechamento = 0;
 
   // Percorre todas as linhas da tabela
-  for (var i = 0.00; i < linhas_F.length; i++) {
+  for (var i = 0; i < linhas_F.length; i++) {
     var linhaF = linhas_F[i];
 
     // Seleciona os campos de quantidade e valor unitário da linha atual
-    var quantityF = linhaF.querySelector('input.quantityFechamento_' + i);
-    var unitPriceF = linhaF.querySelector('input.unitPriceFechamento_' + i);
-
+    var quantityF = linhaF.querySelector('input[name="quantityFechamento"]');
+    var unitPriceF = linhaF.querySelector('input[name="unitPriceFechamento"]');
+    if (!quantityF || !unitPriceF) {
+      continue; // pula para a próxima iteração se um dos campos não existir
+    }
     // Calcula o valor total da linha
     var totalF = quantityF.value * unitPriceF.value;
 
     // Seleciona o campo de valor total da linha atual e atualiza o valor
-    var totalValueF = linhaF.querySelector('span.totalValueFechamento_' + i);
+    var totalValueF = linhaF.querySelector('span.totalValueFechamento');
     totalValueF.textContent = totalF;
 
     // Atualiza o valor total da tabela
