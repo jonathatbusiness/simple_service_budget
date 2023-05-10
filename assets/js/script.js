@@ -210,22 +210,26 @@ function resultadoMateriais() {
   var totalAllMateriais = 0.00;
 
   // Percorre todas as linhas da tabela
-  for (var i = 0.00; i < linhas_M.length; i++) {
+  for (var i = 0; i < linhas_M.length; i++) {
     var linhaM = linhas_M[i];
 
     // Seleciona os campos de quantidade e valor unitário da linha atual
     var quantityM = linhaM.querySelector('input.quantityMateriais_' + i);
     var unitPriceM = linhaM.querySelector('input.unitPriceMateriais_' + i);
 
-    // Calcula o valor total da linha
-    var totalM = quantityM.value * unitPriceM.value;
+    // Verifica se os campos de quantidade e valor unitário existem antes de realizar os cálculos
+    if (quantityM !== null && unitPriceM !== null) {
 
-    // Seleciona o campo de valor total da linha atual e atualiza o valor
-    var totalValueM = linhaM.querySelector('span.totalValueMateriais_' + i);
-    totalValueM.textContent = totalM;
+      // Calcula o valor total da linha
+      var totalM = quantityM.value * unitPriceM.value;
 
-    // Atualiza o valor total da tabela
-    totalAllMateriais += totalM;
+      // Seleciona o campo de valor total da linha atual e atualiza o valor
+      var totalValueM = linhaM.querySelector('span.totalValueMateriais_' + i);
+      totalValueM.textContent = totalM;
+
+      // Atualiza o valor total da tabela
+      totalAllMateriais += totalM;
+    }
   }
 
   // Seleciona o campo de valor total da tabela e atualiza o valor
